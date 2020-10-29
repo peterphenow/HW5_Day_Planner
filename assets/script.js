@@ -56,7 +56,15 @@ function getStoredData() {
 
   //if local storage is empty, or null, exit function
   if (userInputParsed === null) {
-    return;
+    nine.val("");
+    ten.val("");
+    eleven.val("");
+    twelve.val("");
+    one.val("");
+    two.val("");
+    three.val("");
+    four.val("");
+    five.val("");
   } else {
     //set previous user inputs to calendar fields
     nine.val(userInputParsed.nineAM);
@@ -70,3 +78,10 @@ function getStoredData() {
     five.val(userInputParsed.fivePM);
   }
 }
+
+//clear "schedule" from local storage when button clicked
+let clearBtn = $("#clear");
+clearBtn.on("click", function () {
+  localStorage.removeItem("schedule");
+  getStoredData();
+});
