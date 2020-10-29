@@ -9,8 +9,8 @@ saveBtn.on("click", function () {
   console.log("save worked!");
 });
 
-//allow user to input notes for each hour
-let userInputEl = $(".description");
-userInputEl.on("click", function () {
-  console.log("click worked!");
-});
+// allow user to input notes for each hour
+// let userInputEl = $(".description");
+// userInputEl.on("click", function () {
+//   console.log("click worked!");
+// });
