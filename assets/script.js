@@ -85,3 +85,14 @@ clearBtn.on("click", function () {
   localStorage.removeItem("schedule");
   getStoredData();
 });
+
+//set moment.js hours
+$("#moment9").text(moment(9, "HH:mm").format("LT"));
+$("#moment10").text(moment(10, "HH:mm").format("LT"));
+$("#moment11").text(moment(11, "HH:mm").format("LT"));
+$("#moment12").text(moment(12, "HH:mm").format("LT"));
+$("#moment1").text(moment(13, "HH:mm").format("LT"));
+$("#moment2").text(moment(14, "HH:mm").format("LT"));
+$("#moment3").text(moment(15, "HH:mm").format("LT"));
+$("#moment4").text(moment(16, "HH:mm").format("LT"));
+$("#moment5").text(moment(17, "HH:mm").format("LT"));
