@@ -87,12 +87,46 @@ clearBtn.on("click", function () {
 });
 
 //set moment.js hours
-$("#moment9").text(moment(9, "HH:mm").format("LT"));
-$("#moment10").text(moment(10, "HH:mm").format("LT"));
-$("#moment11").text(moment(11, "HH:mm").format("LT"));
-$("#moment12").text(moment(12, "HH:mm").format("LT"));
-$("#moment1").text(moment(13, "HH:mm").format("LT"));
-$("#moment2").text(moment(14, "HH:mm").format("LT"));
-$("#moment3").text(moment(15, "HH:mm").format("LT"));
-$("#moment4").text(moment(16, "HH:mm").format("LT"));
-$("#moment5").text(moment(17, "HH:mm").format("LT"));
+$("#09").text(moment(9, "HH:mm").format("LT"));
+$("#10").text(moment(10, "HH:mm").format("LT"));
+$("#11").text(moment(11, "HH:mm").format("LT"));
+$("#12").text(moment(12, "HH:mm").format("LT"));
+$("#13").text(moment(13, "HH:mm").format("LT"));
+$("#14").text(moment(14, "HH:mm").format("LT"));
+$("#15").text(moment(15, "HH:mm").format("LT"));
+$("#16").text(moment(16, "HH:mm").format("LT"));
+$("#17").text(moment(17, "HH:mm").format("LT"));
+
+//the following function was copied and modified from https://stackoverflow.com/questions/62462599/how-can-i-change-elements-style-based-on-the-time-of-day
+//Change textarea background color based on time
+let checkTime = function () {
+  //Get Current time
+  let currentTime = moment(13, "HH:mm").format("H");
+
+  //get all elements with class "hourly-block"
+  let hourlyBlockElements = $(".hourly-block");
+
+  //loop through hourly-block classes
+  for (let i = 0; i < hourlyBlockElements.length; i++) {
+    //Get element i's ID as a string
+    let elementID = hourlyBlockElements[i].id;
+
+    //get element by ID
+    let manipID = document.getElementById(hourlyBlockElements[i].id);
+
+    //remove any old classes from element
+    $(hourlyBlockElements[i].id).removeClass(".present .past .future");
+
+    // apply new class if task is present/past/future. Applies to the next sibling of the parent element
+    if (elementID < currentTime) {
+      $(manipID).parent().next().addClass("past");
+    } else if (elementID > currentTime) {
+      $(manipID).parent().next().addClass("future");
+    } else {
+      $(manipID).parent().next().addClass("present");
+    }
+  }
+};
+
+// checkTime every 5 minutes
+setInterval(checkTime(), 1000 * 60 * 5);
