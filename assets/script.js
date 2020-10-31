@@ -101,7 +101,7 @@ $("#17").text(moment(17, "HH:mm").format("LT"));
 //Change textarea background color based on time
 let checkTime = function () {
   //Get Current time
-  let currentTime = moment().format("H");
+  let currentTime = moment().format("HH");
 
   //get all elements with class "hourly-block"
   let hourlyBlockElements = $(".hourly-block");
