@@ -15,3 +15,7 @@ This homework required me to research and use Moment.js without any practice or 
 ### **Screenshots**
 
 <img src="./assets/img/WorkdaySchedulerBlank.png" alt="scheduler with no input" width="400" height="250">&nbsp;&nbsp;<img src="./assets/img/WorkdaySchedulerWithInputs.png" alt="scheduler with saved input" width="400" height="250">
+
+### **License**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
